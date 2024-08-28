@@ -26,10 +26,8 @@ body {
 .container__campo_texto {
   position: fixed;
   left: 0;
-  top: 50%; /* Centraliza verticalmente */
-  transform: translateY(
-    -50%
-  ); /* Ajusta para que fique centralizada no meio da página */
+  top: 50%;
+  transform: translateY(-50%);
   padding: 10%;
 }
 
@@ -65,6 +63,7 @@ input[type='texto']:focus::placeholder {
   font-family: 'Inter', sans-serif;
   font-size: 32px;
   font-style: normal;
+  flex-direction: column;
 }
 
 .campo_botoes {
@@ -105,12 +104,13 @@ input[type='texto']:focus::placeholder {
 
 .container__conteudo__botao__copiar {
   width: 328px;
-  height: 67px;
+  height: 70px;
   border-radius: 15px;
-  margin-top: 50px;
+  margin-top: 25px;
   display: none;
   justify-content: center;
-  margin-left: 20px;
+  margin-left: 80px;
+  margin-bottom: 1%;
 }
 
 .botao-copiar {
@@ -145,12 +145,13 @@ input[type='texto']:focus::placeholder {
   top: 50%;
   transform: translateY(-50%);
   padding: 30px;
+  padding-bottom: 15px;
 }
 
 .container__conteudo__lateral {
-  height: 750px;
+  height: 600px;
   width: 400px;
-  padding: 10px;
+  padding: auto;
   background-color: var(--color--gray--300);
   border: 10px solid var(--color--gray--200);
   box-shadow: 10px 10px 8px var(--color--gray--500);
@@ -166,17 +167,17 @@ input[type='texto']:focus::placeholder {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  display: none; /* Inicialmente oculto */
+  display: none;
 }
 
 .container__conteudo__imagem__homem {
-  width: 100%;
+  width: 70%;
   height: auto;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
 }
 .container__conteudo__lateral h1 {
   font-size: 1.5rem;
-  margin: 0 0 10px;
+  margin: 0 1.5px 10px;
   color: var(--color--gray--500);
   font-family: 'Inter', sans-serif;
 }
@@ -205,14 +206,15 @@ footer {
   width: 100%;
   height: 10vh;
   position: fixed;
-  bottom: 0;
+  /* bottom: 0; */
   margin: 0;
   box-sizing: border-box;
+  bottom: 0;
   font-family: 'Inter', sans-serif;
 }
 
 /*Estilos para dispositivos grandes e tablets */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .container__campo_texto {
     padding: 5%;
   }
@@ -227,7 +229,7 @@ footer {
   }
 
   .container__conteudo__lateral {
-    padding: 10px;
+    padding: 20px;
   }
 }
 
@@ -275,7 +277,7 @@ footer {
   }
 
   .container__conteudo__botao__copiar {
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   .container__conteudo__lateral {

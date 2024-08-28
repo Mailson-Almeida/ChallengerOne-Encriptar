@@ -3,8 +3,13 @@ function criptografar(event) {
 
   const texto = document.getElementById('texto').value;
 
-  if (/[A-ZÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÃÕÄËÏÖÜÇáéíóúàèìòùâêîôûãõäëïöüç]/.test(texto)) {
-    alert('O texto não pode conter letras maiúsculas ou acentuadas.');
+  if (
+    /[A-ZÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÃÕÄËÏÖÜÇáéíóúàèìòùâêîôûãõäëïöüç]/.test(texto) ||
+    !texto
+  ) {
+    alert(
+      'O texto não pode estar em branco ou conter letras maiúsculas e acentuadas.',
+    );
 
     limparTexto();
     return;
@@ -30,6 +35,13 @@ function criptografar(event) {
 
   document.getElementById('titulo').innerText = 'Mensagem Criptografada:';
   document.getElementById('paragrafo').innerText = '';
+}
+
+function limparTexto() {
+  document.querySelector('textarea').value = '';
+  document
+    .querySelector('textarea')
+    .setAttribute('placeholder', 'Digite seu texto');
 }
 
 function descriptografar(event) {
